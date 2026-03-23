@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astra Sports</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    background: black;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.banner {
+    background: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6') center/cover;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #1c1c1c;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>⚽ Astra Sports</header>
+
+<div class="banner">
+    <h1>Vista sua paixão pelo futebol</h1>
+</div>
+
+<div class="container">
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Camisa Real Madrid</h3>
+    <p>R$ 149,90</p>
+    <button onclick="comprar('Real Madrid')">Comprar</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Camisa Flamengo</h3>
+    <p>R$ 129,90</p>
+    <button onclick="comprar('Flamengo')">Comprar</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Camisa Barcelona</h3>
+    <p>R$ 149,90</p>
+    <button onclick="comprar('Barcelona')">Comprar</button>
+</div>
+
+</div>
+
+<script>
+function comprar(produto) {
+    let numero = "5599999999999";
+    let mensagem = `Olá, quero comprar a camisa do ${produto}`;
+    let link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link);
+}
+</script>
+
+</body>
+</html>
