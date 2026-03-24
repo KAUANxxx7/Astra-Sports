@@ -8,45 +8,54 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #0f0f0f;
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
     color: white;
 }
 
 header {
-    background: black;
-    padding: 15px;
+    background: #000;
+    padding: 20px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    border-bottom: 2px solid #00ff88;
+}
+
+header h1 {
+    margin: 0;
 }
 
 .banner {
-    background: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6') center/cover;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(to right, #000, #111);
 }
 
-.banner h1 {
-    background: rgba(0,0,0,0.7);
-    padding: 10px;
+.banner h2 {
+    font-size: 28px;
+}
+
+.banner p {
+    color: #aaa;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 20px;
 }
 
 .card {
-    background: #1c1c1c;
+    background: #111;
     margin: 15px;
     padding: 15px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
+    border-radius: 12px;
+    width: 220px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card img {
@@ -54,45 +63,57 @@ header {
     border-radius: 10px;
 }
 
+.price {
+    color: #00ff88;
+    font-weight: bold;
+}
+
 button {
-    background: green;
-    color: white;
+    width: 100%;
+    background: #00ff88;
+    color: black;
     border: none;
     padding: 10px;
-    cursor: pointer;
     margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
 }
 </style>
 </head>
 
 <body>
 
-<header>⚽ Astra Sports</header>
+<header>
+    <h1>⚽ Astra Sports</h1>
+    <p>Vista sua paixão pelo futebol</p>
+</header>
 
 <div class="banner">
-    <h1>Vista sua paixão pelo futebol</h1>
+    <h2>🔥 Camisas dos maiores clubes</h2>
+    <p>Qualidade premium • Entrega rápida • Pagamento via Pix</p>
 </div>
 
 <div class="container">
 
 <div class="card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Camisa Real Madrid</h3>
-    <p>R$ 149,90</p>
+    <img src="https://i.imgur.com/8Km9tLL.jpg">
+    <h3>Real Madrid 2024</h3>
+    <p class="price">R$ 149,90</p>
     <button onclick="comprar('Real Madrid')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Camisa Flamengo</h3>
-    <p>R$ 129,90</p>
+    <img src="https://i.imgur.com/2DhmtJ4.jpg">
+    <h3>Flamengo 2024</h3>
+    <p class="price">R$ 129,90</p>
     <button onclick="comprar('Flamengo')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Camisa Barcelona</h3>
-    <p>R$ 149,90</p>
+    <img src="https://i.imgur.com/R9qU6Yk.jpg">
+    <h3>Barcelona 2024</h3>
+    <p class="price">R$ 149,90</p>
     <button onclick="comprar('Barcelona')">Comprar</button>
 </div>
 
