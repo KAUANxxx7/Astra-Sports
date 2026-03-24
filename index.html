@@ -9,8 +9,8 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:'Segoe UI',sans-serif;
-    background:#0b0b0b;
+    font-family: Arial, sans-serif;
+    background:#0a0a0a;
     color:#fff;
 }
 
@@ -19,24 +19,26 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
+    padding:15px 20px;
     background:#000;
-    border-bottom:1px solid #1f1f1f;
     position:sticky;
     top:0;
-    z-index:1000;
 }
 
-.logo img{
-    height:50px;
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#00ff88;
 }
 
 nav a{
     color:#ccc;
-    margin-left:25px;
+    margin-left:15px;
     text-decoration:none;
     font-size:14px;
-    transition:0.3s;
 }
 
 nav a:hover{
@@ -45,45 +47,18 @@ nav a:hover{
 
 /* BANNER */
 .banner{
-    height:90vh;
-    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2') center/cover;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding-left:60px;
+    padding:60px 20px;
+    text-align:center;
+    background:#111;
 }
 
 .banner h1{
-    font-size:50px;
+    font-size:26px;
 }
 
 .banner p{
-    margin-top:10px;
     color:#aaa;
-}
-
-.btn-banner{
-    margin-top:20px;
-    width:200px;
-    padding:15px;
-    background:#00ff88;
-    color:black;
-    border:none;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn-banner:hover{
-    background:#00cc6a;
-}
-
-/* TITULO */
-.section-title{
-    text-align:center;
-    margin:50px 0 20px;
-    font-size:24px;
+    margin-top:10px;
 }
 
 /* PRODUTOS */
@@ -91,20 +66,16 @@ nav a:hover{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    padding:20px;
+    padding:10px;
 }
 
 .card{
     background:#111;
-    margin:15px;
-    padding:15px;
+    width:160px;
+    margin:10px;
     border-radius:10px;
-    width:230px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px) scale(1.02);
+    padding:10px;
+    text-align:center;
 }
 
 .card img{
@@ -112,45 +83,29 @@ nav a:hover{
     border-radius:8px;
 }
 
-.card h3{
-    margin:10px 0 5px;
-}
-
 .price{
     color:#00ff88;
     font-weight:bold;
-}
-
-.alert{
-    color:red;
-    font-size:13px;
+    margin:5px 0;
 }
 
 button{
     width:100%;
-    background:#00ff88;
-    color:black;
+    padding:8px;
     border:none;
-    padding:10px;
-    margin-top:10px;
-    cursor:pointer;
+    background:#00ff88;
     font-weight:bold;
-    transition:0.3s;
+    cursor:pointer;
 }
 
-button:hover{
-    background:#00cc6a;
-}
-
-/* WHATS FLOAT */
+/* WHATS */
 .whatsapp{
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:15px;
+    right:15px;
     background:#25D366;
-    padding:15px;
+    padding:12px;
     border-radius:50%;
-    font-size:20px;
     text-decoration:none;
     color:white;
 }
@@ -158,84 +113,72 @@ button:hover{
 /* FOOTER */
 footer{
     text-align:center;
-    padding:20px;
+    padding:15px;
     background:#000;
     color:#777;
-    margin-top:40px;
+    margin-top:20px;
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <div class="logo">
-        <img src="logo.png">
-    </div>
-
+    <div class="logo">ASTRA <span>SPORTS</span></div>
     <nav>
         <a href="#">Início</a>
-        <a href="#">Europa</a>
-        <a href="#">Brasil</a>
+        <a href="#">Produtos</a>
     </nav>
 </header>
 
 <div class="banner">
-    <h1>Vista sua paixão pelo futebol</h1>
-    <p>Camisas premium dos maiores clubes do mundo</p>
-    <button class="btn-banner">Ver produtos</button>
+    <h1>Camisas de Futebol</h1>
+    <p>Europa e Brasil</p>
 </div>
-
-<h2 class="section-title">🔥 Mais vendidos</h2>
 
 <div class="container">
 
 <div class="card">
-    <img src="https://i.imgur.com/8Km9tLL.jpg">
-    <h3>Real Madrid 2024</h3>
-    <p class="price">R$ 149,90</p>
-    <p class="alert">⚠️ Últimas unidades</p>
-    <button onclick="comprar('Real Madrid 2024')">Comprar</button>
+    <img src="https://via.placeholder.com/150">
+    <p>Real Madrid</p>
+    <p class="price">R$149,90</p>
+    <button onclick="comprar('Real Madrid')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://i.imgur.com/2DhmtJ4.jpg">
-    <h3>Flamengo 2024</h3>
-    <p class="price">R$ 129,90</p>
-    <p class="alert">⚠️ Últimas unidades</p>
-    <button onclick="comprar('Flamengo 2024')">Comprar</button>
+    <img src="https://via.placeholder.com/150">
+    <p>Flamengo</p>
+    <p class="price">R$129,90</p>
+    <button onclick="comprar('Flamengo')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://i.imgur.com/R9qU6Yk.jpg">
-    <h3>Barcelona 2024</h3>
-    <p class="price">R$ 149,90</p>
-    <p class="alert">⚠️ Últimas unidades</p>
-    <button onclick="comprar('Barcelona 2024')">Comprar</button>
+    <img src="https://via.placeholder.com/150">
+    <p>Barcelona</p>
+    <p class="price">R$149,90</p>
+    <button onclick="comprar('Barcelona')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://i.imgur.com/FYQ8K8M.jpg">
-    <h3>Manchester City 2024</h3>
-    <p class="price">R$ 149,90</p>
-    <p class="alert">⚠️ Últimas unidades</p>
-    <button onclick="comprar('Manchester City 2024')">Comprar</button>
+    <img src="https://via.placeholder.com/150">
+    <p>Manchester City</p>
+    <p class="price">R$149,90</p>
+    <button onclick="comprar('Manchester City')">Comprar</button>
 </div>
 
 </div>
 
 <footer>
-    © 2026 Astra Sports • Loja oficial
+Astra Sports © 2026
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5531996520860" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5531996520860">💬</a>
 
 <script>
 function comprar(produto){
-    let numero="5531996520860";
-    let mensagem=`Olá! Tenho interesse na camisa do ${produto}. Ela ainda está disponível?`;
-    let link=`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    window.open(link);
+let msg=`Olá, quero comprar ${produto}`;
+window.open(`https://wa.me/5531996520860?text=${encodeURIComponent(msg)}`);
 }
 </script>
 
