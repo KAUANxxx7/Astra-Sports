@@ -1,186 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Astra Sports</title>
 
 <style>
+:root{
+  --bg:#0b0b0b;
+  --card:#121212;
+  --green:#00ff88;
+  --green2:#00cc6a;
+  --text:#eaeaea;
+  --muted:#9aa0a6;
+}
+
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:Arial;
-    background:#0a0a0a;
-    color:#fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* HEADER */
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-    background:#000;
+  position:sticky; top:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px;
+  background:rgba(0,0,0,.7);
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid #1f1f1f;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:bold;
+  font-weight:800; letter-spacing:.5px; font-size:20px;
 }
-
-.logo span{color:#00ff88;}
+.logo span{ color:var(--green); }
 
 nav a{
-    color:#ccc;
-    margin-left:20px;
-    text-decoration:none;
+  color:#cfcfcf; text-decoration:none; margin-left:18px; font-size:14px;
+}
+nav a:hover{ color:var(--green); }
+
+/* HERO */
+.hero{
+  min-height:78vh;
+  display:flex; align-items:center;
+  padding:40px 24px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.65) 45%, rgba(0,0,0,.3) 100%),
+    url('https://images.unsplash.com/photo-1522778034537-20a2486be803?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
 }
 
-nav a:hover{color:#00ff88;}
-
-/* BANNER */
-.banner{
-    height:300px;
-    background:url('https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a') center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.hero-inner{
+  max-width:1100px; margin:0 auto; width:100%;
+  display:flex; gap:40px; align-items:center; justify-content:space-between;
 }
 
-.banner h1{
-    background:rgba(0,0,0,0.7);
-    padding:15px;
+.hero-text{
+  max-width:520px;
+}
+.hero h1{
+  font-size:44px; line-height:1.1; margin-bottom:12px;
+}
+.hero p{
+  color:var(--muted); margin-bottom:18px;
+}
+.cta{
+  display:inline-block;
+  background:linear-gradient(135deg, var(--green), var(--green2));
+  color:#001a0d;
+  padding:12px 18px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+}
+.cta:hover{ filter:brightness(.95); }
+
+/* SECTION */
+.section{
+  max-width:1100px; margin:40px auto; padding:0 16px;
+}
+.section h2{
+  text-align:center; margin-bottom:18px; font-size:22px;
 }
 
-/* PRODUTOS */
-.title{
-    text-align:center;
-    margin:30px 0;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:16px;
+}
+@media (max-width:900px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:520px){
+  .grid{ grid-template-columns: 1fr; }
 }
 
-.container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
+/* CARD */
 .card{
-    width:220px;
-    margin:15px;
-    background:#111;
-    border-radius:10px;
-    overflow:hidden;
-    transition:0.3s;
+  background:var(--card);
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  transition:transform .25s, box-shadow .25s;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
-
-.card:hover{transform:scale(1.05);}
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.5);
+}
 
 .card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+  width:100%; height:260px; object-fit:cover; display:block;
 }
 
-.card h3{
-    padding:10px;
+.badge{
+  position:absolute; top:10px; left:10px;
+  background:rgba(0,0,0,.7);
+  padding:6px 8px; border-radius:6px; font-size:12px;
 }
 
+.info{
+  padding:12px;
+}
+.title{
+  font-weight:700; margin-bottom:6px;
+}
 .price{
-    color:#00ff88;
-    padding-left:10px;
+  color:var(--green); font-weight:800; margin-bottom:10px;
 }
 
-button{
-    width:90%;
-    margin:10px;
-    padding:10px;
-    border:none;
-    background:#00ff88;
-    font-weight:bold;
-    cursor:pointer;
+.btn{
+  width:100%;
+  border:none; cursor:pointer;
+  padding:10px;
+  border-radius:8px;
+  font-weight:800;
+  background:linear-gradient(135deg, var(--green), var(--green2));
+  color:#001a0d;
 }
+.btn:hover{ filter:brightness(.95); }
 
-/* WHATS */
+/* WHATS FLOAT */
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-    text-decoration:none;
-    color:white;
+  position:fixed; right:18px; bottom:18px;
+  background:#25D366; color:#fff; text-decoration:none;
+  padding:14px; border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 /* FOOTER */
 footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
-    margin-top:20px;
+  text-align:center; padding:22px; color:#7f8c8d;
+  border-top:1px solid #1f1f1f; margin-top:30px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <div class="logo">ASTRA <span>SPORTS</span></div>
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Produtos</a>
-    </nav>
+  <div class="logo">ASTRA <span>SPORTS</span></div>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#produtos">Produtos</a>
+  </nav>
 </header>
 
-<div class="banner">
-    <h1>🔥 Camisas Originais dos Grandes Clubes</h1>
-</div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Vista sua paixão pelo futebol</h1>
+      <p>Camisas premium dos maiores clubes. Qualidade, estilo e entrega rápida.</p>
+      <a href="#produtos" class="cta">Ver produtos</a>
+    </div>
+  </div>
+</section>
 
-<h2 class="title">Mais vendidos</h2>
+<section class="section" id="produtos">
+  <h2>🔥 Mais vendidos</h2>
 
-<div class="container">
+  <div class="grid">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600369672013-2d3c7b3a4a5d">
-<h3>Real Madrid</h3>
-<p class="price">R$149,90</p>
-<button onclick="comprar('Real Madrid')">Comprar</button>
-</div>
+    <div class="card">
+      <span class="badge">Últimas unidades</span>
+      <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="info">
+        <div class="title">Real Madrid 2024</div>
+        <div class="price">R$ 149,90</div>
+        <button class="btn" onclick="comprar('Real Madrid 2024')">Comprar</button>
+      </div>
+    </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d">
-<h3>Flamengo</h3>
-<p class="price">R$129,90</p>
-<button onclick="comprar('Flamengo')">Comprar</button>
-</div>
+    <div class="card">
+      <span class="badge">Mais vendido</span>
+      <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="info">
+        <div class="title">Flamengo 2024</div>
+        <div class="price">R$ 129,90</div>
+        <button class="btn" onclick="comprar('Flamengo 2024')">Comprar</button>
+      </div>
+    </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1587613754511-3f4b1c6b0f5f">
-<h3>Barcelona</h3>
-<p class="price">R$149,90</p>
-<button onclick="comprar('Barcelona')">Comprar</button>
-</div>
+    <div class="card">
+      <span class="badge">Novo</span>
+      <img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="info">
+        <div class="title">Barcelona 2024</div>
+        <div class="price">R$ 149,90</div>
+        <button class="btn" onclick="comprar('Barcelona 2024')">Comprar</button>
+      </div>
+    </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1">
-<h3>Manchester City</h3>
-<p class="price">R$149,90</p>
-<button onclick="comprar('Manchester City')">Comprar</button>
-</div>
+    <div class="card">
+      <span class="badge">Top</span>
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="info">
+        <div class="title">Manchester City 2024</div>
+        <div class="price">R$ 149,90</div>
+        <button class="btn" onclick="comprar('Manchester City 2024')">Comprar</button>
+      </div>
+    </div>
 
-</div>
+  </div>
+</section>
 
 <footer>
-© Astra Sports 2026
+  © 2026 Astra Sports • Loja online
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5531996520860">💬</a>
+<a class="whatsapp" href="https://wa.me/5531996520860" target="_blank">💬</a>
 
 <script>
 function comprar(produto){
-let msg=`Olá, quero comprar ${produto}`;
-window.open(`https://wa.me/5531996520860?text=${encodeURIComponent(msg)}`);
+  const numero = "5531996520860";
+  const mensagem = `Olá! Tenho interesse na camisa ${produto}. Está disponível?`;
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
 }
 </script>
 
