@@ -8,8 +8,8 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0a0a;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
     color: white;
 }
 
@@ -17,12 +17,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
-    padding: 15px 30px;
+    padding: 20px 40px;
+    background: #000;
+    border-bottom: 1px solid #222;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
 }
 
@@ -31,28 +32,51 @@ header {
 }
 
 nav a {
-    color: white;
-    margin-left: 20px;
+    color: #ccc;
+    margin-left: 25px;
     text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00ff88;
 }
 
 .banner {
-    height: 300px;
-    background: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2') center/cover;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2') center/cover;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    padding-left: 60px;
 }
 
 .banner h1 {
-    background: rgba(0,0,0,0.7);
-    padding: 15px;
-    font-size: 28px;
+    font-size: 40px;
+    margin: 0;
+}
+
+.banner p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.btn-banner {
+    margin-top: 20px;
+    width: 180px;
+    padding: 12px;
+    background: #00ff88;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .section-title {
     text-align: center;
-    margin-top: 30px;
+    margin: 40px 0 10px;
+    font-size: 22px;
 }
 
 .container {
@@ -66,18 +90,22 @@ nav a {
     background: #111;
     margin: 15px;
     padding: 15px;
-    border-radius: 12px;
-    width: 220px;
+    border-radius: 10px;
+    width: 230px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
 }
 
 .price {
@@ -87,7 +115,7 @@ nav a {
 
 .alert {
     color: red;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 button {
@@ -104,8 +132,9 @@ button {
 footer {
     text-align: center;
     padding: 20px;
-    background: black;
-    margin-top: 30px;
+    background: #000;
+    color: #777;
+    margin-top: 40px;
 }
 </style>
 </head>
@@ -113,7 +142,7 @@ footer {
 <body>
 
 <header>
-    <div class="logo">⚡ ASTRA <span>SPORTS</span></div>
+    <div class="logo">ASTRA <span>SPORTS</span></div>
     <nav>
         <a href="#">Início</a>
         <a href="#">Europa</a>
@@ -123,9 +152,11 @@ footer {
 
 <div class="banner">
     <h1>Vista sua paixão pelo futebol</h1>
+    <p>Camisas premium dos maiores clubes do mundo</p>
+    <button class="btn-banner">Ver produtos</button>
 </div>
 
-<h2 class="section-title">🔥 Destaques</h2>
+<h2 class="section-title">🔥 Mais vendidos</h2>
 
 <div class="container">
 
@@ -133,7 +164,7 @@ footer {
     <img src="https://i.imgur.com/8Km9tLL.jpg">
     <h3>Real Madrid 2024</h3>
     <p class="price">R$ 149,90</p>
-    <p class="alert">⚠️ Últimas unidades!</p>
+    <p class="alert">⚠️ Últimas unidades</p>
     <button onclick="comprar('Real Madrid 2024')">Comprar</button>
 </div>
 
@@ -141,7 +172,7 @@ footer {
     <img src="https://i.imgur.com/2DhmtJ4.jpg">
     <h3>Flamengo 2024</h3>
     <p class="price">R$ 129,90</p>
-    <p class="alert">⚠️ Últimas unidades!</p>
+    <p class="alert">⚠️ Últimas unidades</p>
     <button onclick="comprar('Flamengo 2024')">Comprar</button>
 </div>
 
@@ -149,7 +180,7 @@ footer {
     <img src="https://i.imgur.com/R9qU6Yk.jpg">
     <h3>Barcelona 2024</h3>
     <p class="price">R$ 149,90</p>
-    <p class="alert">⚠️ Últimas unidades!</p>
+    <p class="alert">⚠️ Últimas unidades</p>
     <button onclick="comprar('Barcelona 2024')">Comprar</button>
 </div>
 
@@ -157,14 +188,14 @@ footer {
     <img src="https://i.imgur.com/FYQ8K8M.jpg">
     <h3>Manchester City 2024</h3>
     <p class="price">R$ 149,90</p>
-    <p class="alert">⚠️ Últimas unidades!</p>
+    <p class="alert">⚠️ Últimas unidades</p>
     <button onclick="comprar('Manchester City 2024')">Comprar</button>
 </div>
 
 </div>
 
 <footer>
-    © 2026 Astra Sports - Todos os direitos reservados
+    © 2026 Astra Sports • Loja oficial de camisas
 </footer>
 
 <script>
