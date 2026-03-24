@@ -9,7 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial;
     background:#0a0a0a;
     color:#fff;
 }
@@ -19,79 +19,81 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 20px;
+    padding:15px 30px;
     background:#000;
-    position:sticky;
-    top:0;
 }
 
 .logo{
-    font-size:22px;
+    font-size:24px;
     font-weight:bold;
 }
 
-.logo span{
-    color:#00ff88;
-}
+.logo span{color:#00ff88;}
 
 nav a{
     color:#ccc;
-    margin-left:15px;
+    margin-left:20px;
     text-decoration:none;
-    font-size:14px;
 }
 
-nav a:hover{
-    color:#00ff88;
-}
+nav a:hover{color:#00ff88;}
 
 /* BANNER */
 .banner{
-    padding:60px 20px;
-    text-align:center;
-    background:#111;
+    height:300px;
+    background:url('https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .banner h1{
-    font-size:26px;
-}
-
-.banner p{
-    color:#aaa;
-    margin-top:10px;
+    background:rgba(0,0,0,0.7);
+    padding:15px;
 }
 
 /* PRODUTOS */
+.title{
+    text-align:center;
+    margin:30px 0;
+}
+
 .container{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    padding:10px;
 }
 
 .card{
+    width:220px;
+    margin:15px;
     background:#111;
-    width:160px;
-    margin:10px;
     border-radius:10px;
-    padding:10px;
-    text-align:center;
+    overflow:hidden;
+    transition:0.3s;
 }
+
+.card:hover{transform:scale(1.05);}
 
 .card img{
     width:100%;
-    border-radius:8px;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:10px;
 }
 
 .price{
     color:#00ff88;
-    font-weight:bold;
-    margin:5px 0;
+    padding-left:10px;
 }
 
 button{
-    width:100%;
-    padding:8px;
+    width:90%;
+    margin:10px;
+    padding:10px;
     border:none;
     background:#00ff88;
     font-weight:bold;
@@ -101,10 +103,10 @@ button{
 /* WHATS */
 .whatsapp{
     position:fixed;
-    bottom:15px;
-    right:15px;
+    bottom:20px;
+    right:20px;
     background:#25D366;
-    padding:12px;
+    padding:15px;
     border-radius:50%;
     text-decoration:none;
     color:white;
@@ -113,9 +115,8 @@ button{
 /* FOOTER */
 footer{
     text-align:center;
-    padding:15px;
+    padding:20px;
     background:#000;
-    color:#777;
     margin-top:20px;
 }
 </style>
@@ -133,44 +134,45 @@ footer{
 </header>
 
 <div class="banner">
-    <h1>Camisas de Futebol</h1>
-    <p>Europa e Brasil</p>
+    <h1>🔥 Camisas Originais dos Grandes Clubes</h1>
 </div>
+
+<h2 class="title">Mais vendidos</h2>
 
 <div class="container">
 
 <div class="card">
-    <img src="https://via.placeholder.com/150">
-    <p>Real Madrid</p>
-    <p class="price">R$149,90</p>
-    <button onclick="comprar('Real Madrid')">Comprar</button>
+<img src="https://images.unsplash.com/photo-1600369672013-2d3c7b3a4a5d">
+<h3>Real Madrid</h3>
+<p class="price">R$149,90</p>
+<button onclick="comprar('Real Madrid')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://via.placeholder.com/150">
-    <p>Flamengo</p>
-    <p class="price">R$129,90</p>
-    <button onclick="comprar('Flamengo')">Comprar</button>
+<img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d">
+<h3>Flamengo</h3>
+<p class="price">R$129,90</p>
+<button onclick="comprar('Flamengo')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://via.placeholder.com/150">
-    <p>Barcelona</p>
-    <p class="price">R$149,90</p>
-    <button onclick="comprar('Barcelona')">Comprar</button>
+<img src="https://images.unsplash.com/photo-1587613754511-3f4b1c6b0f5f">
+<h3>Barcelona</h3>
+<p class="price">R$149,90</p>
+<button onclick="comprar('Barcelona')">Comprar</button>
 </div>
 
 <div class="card">
-    <img src="https://via.placeholder.com/150">
-    <p>Manchester City</p>
-    <p class="price">R$149,90</p>
-    <button onclick="comprar('Manchester City')">Comprar</button>
+<img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1">
+<h3>Manchester City</h3>
+<p class="price">R$149,90</p>
+<button onclick="comprar('Manchester City')">Comprar</button>
 </div>
 
 </div>
 
 <footer>
-Astra Sports © 2026
+© Astra Sports 2026
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5531996520860">💬</a>
