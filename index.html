@@ -6,130 +6,162 @@
 <title>Astra Sports</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b0b0b;
-    color: white;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#0b0b0b;
+    color:#fff;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #000;
-    border-bottom: 1px solid #1f1f1f;
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#000;
+    border-bottom:1px solid #1f1f1f;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.logo img {
-    height: 50px;
+.logo img{
+    height:50px;
 }
 
-nav a {
-    color: #ccc;
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 14px;
+nav a{
+    color:#ccc;
+    margin-left:25px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
 }
 
-nav a:hover {
-    color: #00ff88;
+nav a:hover{
+    color:#00ff88;
 }
 
-.banner {
-    height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+/* BANNER */
+.banner{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
     url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2') center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:60px;
 }
 
-.banner h1 {
-    font-size: 40px;
-    margin: 0;
+.banner h1{
+    font-size:50px;
 }
 
-.banner p {
-    color: #aaa;
-    margin-top: 10px;
+.banner p{
+    margin-top:10px;
+    color:#aaa;
 }
 
-.btn-banner {
-    margin-top: 20px;
-    width: 180px;
-    padding: 12px;
-    background: #00ff88;
-    color: black;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
+.btn-banner{
+    margin-top:20px;
+    width:200px;
+    padding:15px;
+    background:#00ff88;
+    color:black;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.section-title {
-    text-align: center;
-    margin: 40px 0 10px;
-    font-size: 22px;
+.btn-banner:hover{
+    background:#00cc6a;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+/* TITULO */
+.section-title{
+    text-align:center;
+    margin:50px 0 20px;
+    font-size:24px;
 }
 
-.card {
-    background: #111;
-    margin: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    width: 230px;
-    transition: 0.3s;
+/* PRODUTOS */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.card{
+    background:#111;
+    margin:15px;
+    padding:15px;
+    border-radius:10px;
+    width:230px;
+    transition:0.3s;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 8px;
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
 }
 
-.card h3 {
-    margin: 10px 0 5px;
+.card img{
+    width:100%;
+    border-radius:8px;
 }
 
-.price {
-    color: #00ff88;
-    font-weight: bold;
+.card h3{
+    margin:10px 0 5px;
 }
 
-.alert {
-    color: red;
-    font-size: 13px;
+.price{
+    color:#00ff88;
+    font-weight:bold;
 }
 
-button {
-    width: 100%;
-    background: #00ff88;
-    color: black;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-weight: bold;
+.alert{
+    color:red;
+    font-size:13px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #000;
-    color: #777;
-    margin-top: 40px;
+button{
+    width:100%;
+    background:#00ff88;
+    color:black;
+    border:none;
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#00cc6a;
+}
+
+/* WHATS FLOAT */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    color:white;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#777;
+    margin-top:40px;
 }
 </style>
 </head>
@@ -196,11 +228,13 @@ footer {
     © 2026 Astra Sports • Loja oficial
 </footer>
 
+<a class="whatsapp" href="https://wa.me/5531996520860" target="_blank">💬</a>
+
 <script>
-function comprar(produto) {
-    let numero = "5531996520860";
-    let mensagem = `Olá! Tenho interesse na camisa do ${produto}. Ela ainda está disponível?`;
-    let link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+function comprar(produto){
+    let numero="5531996520860";
+    let mensagem=`Olá! Tenho interesse na camisa do ${produto}. Ela ainda está disponível?`;
+    let link=`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     window.open(link);
 }
 </script>
