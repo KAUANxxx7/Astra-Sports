@@ -22,6 +22,11 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    color: #aaa;
 }
 
 .banner {
@@ -31,7 +36,7 @@ header h1 {
 }
 
 .banner h2 {
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .banner p {
@@ -66,6 +71,7 @@ header h1 {
 .price {
     color: #00ff88;
     font-weight: bold;
+    font-size: 18px;
 }
 
 button {
@@ -78,6 +84,11 @@ button {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.alert {
+    color: red;
+    font-size: 14px;
 }
 </style>
 </head>
@@ -100,21 +111,32 @@ button {
     <img src="https://i.imgur.com/8Km9tLL.jpg">
     <h3>Real Madrid 2024</h3>
     <p class="price">R$ 149,90</p>
-    <button onclick="comprar('Real Madrid')">Comprar</button>
+    <p class="alert">⚠️ Últimas unidades!</p>
+    <button onclick="comprar('Real Madrid 2024')">Comprar</button>
 </div>
 
 <div class="card">
     <img src="https://i.imgur.com/2DhmtJ4.jpg">
-    <h3>Cruzeiro 2024</h3>
+    <h3>Flamengo 2024</h3>
     <p class="price">R$ 129,90</p>
-    <button onclick="comprar('Cruzeiro')">Comprar</button>
+    <p class="alert">⚠️ Últimas unidades!</p>
+    <button onclick="comprar('Flamengo 2024')">Comprar</button>
 </div>
 
 <div class="card">
     <img src="https://i.imgur.com/R9qU6Yk.jpg">
     <h3>Barcelona 2024</h3>
     <p class="price">R$ 149,90</p>
-    <button onclick="comprar('Barcelona')">Comprar</button>
+    <p class="alert">⚠️ Últimas unidades!</p>
+    <button onclick="comprar('Barcelona 2024')">Comprar</button>
+</div>
+
+<div class="card">
+    <img src="https://i.imgur.com/FYQ8K8M.jpg">
+    <h3>Manchester City 2024</h3>
+    <p class="price">R$ 149,90</p>
+    <p class="alert">⚠️ Últimas unidades!</p>
+    <button onclick="comprar('Manchester City 2024')">Comprar</button>
 </div>
 
 </div>
@@ -122,7 +144,7 @@ button {
 <script>
 function comprar(produto) {
     let numero = "5531996520860";
-    let mensagem = `Olá, quero comprar a camisa do ${produto}`;
+    let mensagem = `Olá! Tenho interesse na camisa do ${produto}. Ela ainda está disponível?`;
     let link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     window.open(link);
 }
